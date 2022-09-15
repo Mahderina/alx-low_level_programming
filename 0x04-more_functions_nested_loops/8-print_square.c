@@ -1,32 +1,23 @@
-julien@ubuntu:~/0x04$ cat 8-main.c 
 #include "main.h"
 
 /**
- * main - check the code
+ * print_square - print a square in the terminal
+ * @size: size of square
  *
- * Return: Always 0.
+ * Return: void
  */
-int main(void)
+void print_square(int size)
 {
-    print_square(2);
-    print_square(10);
-    print_square(0);
-    return (0);
+	int linenum;
+	int linelen;
+
+	for (linenum = 0; linenum < size; ++linenum)
+	{
+		for (linelen = 0; linelen < size; ++linelen)
+			_putchar('#');
+		_putchar('\n');
+	}
+
+	if (size <= 0)
+		_putchar('\n');
 }
-
-julien@ubuntu:~/0x04$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 8-main.c 8-print_square.c -o 8-squares
-julien@ubuntu:~/0x04$ ./8-squares 
-##
-##
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-
-julien@ubuntu:~/0x04$ 
