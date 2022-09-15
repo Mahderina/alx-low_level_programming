@@ -17,8 +17,3 @@ void print_numbers(void)
 	} while (num >= 0 && num <= 9);
 	_putchar('\n');
 }
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
