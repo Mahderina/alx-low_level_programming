@@ -1,25 +1,35 @@
 /**
-* _strspn - Gets the length of a prefix substring.
-* @s: String where substring will look.
-* @accept: Substring of accepted chars.
-* Return: Length of occurrence.
+ * _strspn - a function that gets the
+ *           length of a prexif substring
+ *
+ * @s: pointer to string input
+ * @accept: substring prefix to look for
+ *
+ * Return: the number of bytes in the initial segment
 */
+
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int c = 0;
-	char *t = accept;
+	int i, j, f;
 
-	while (*s++)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		while (*accept++)
-			if (*(s - 1) == *(accept - 1))
+		j = 0;
+		f = 1; /*flag status*/
+		while (accept[j] != '\0')
+		{
+			if (s[i] == accept[j])
 			{
-				c++;
+				f = 0; /*success*/
 				break;
 			}
-		if (!(*--accept))
+			j++;
+		}
+		if (f == 1)
 			break;
-		accept = t;
+		i++;
 	}
-	return (c);
+
+	return (i);
 }
