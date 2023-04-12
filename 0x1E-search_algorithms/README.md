@@ -1,0 +1,1 @@
+solutions of search algorithm
